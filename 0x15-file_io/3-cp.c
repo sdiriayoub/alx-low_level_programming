@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buffer = create_buffer(argv[2]);
+	buffer = create_buffer(argv[1]); // Corrected parameter to argv[1]
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
 	{
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664); // Corrected parameter to argv[2]
 	if (to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
